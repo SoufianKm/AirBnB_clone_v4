@@ -41,7 +41,11 @@ document.ready(function () {
     // fetch data about places
     $.post({
 	url: `${HOST}/api/v1/places_search`,
-	data: JSON.stringify({}),
+	data: JSON.stringify({
+          amenities: Object.values(amenities),
+          states: Object.values(states),
+          cities: Object.values(cities)
+        }),
 	headers: {
 	    "Content-Type": "application/json",
 	},
